@@ -23,6 +23,7 @@ openpyxl==3.1.5
 passlib==1.7.4
 pillow==12.3.0
 psycopg2-binary==2.9.13
+psycopg==3.1.9
 pyasn1==0.6.4
 pycparser==3.0
 pydantic==2.13.5
