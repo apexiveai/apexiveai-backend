@@ -1,22 +1,4 @@
 providers = ["python"]
 
-[phases.setup]
-nixPkgs = [
-  "xorg.libxcb",
-  "libxkbcommon",
-  "xorg.xcbutilwm",
-  "xorg.xcbutil",
-  "xorg.xcbutilimage",
-  "xorg.xcbutilkeysyms",
-  "xorg.xcbutilrenderutil",
-  "xorg.xcbutilcursor",
-  "xorg.libX11",
-  "xorg.libXext",
-  "xorg.libXrender",
-  "xorg.libSM",
-  "xorg.libICE",
-  "glib",
-  "mesa",
-  "fontconfig",
-  "freetype"
-]
+[start]
+cmd = "uvicorn app.main:app --host 0.0.0.0 --port $PORT"
