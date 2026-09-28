@@ -2,9 +2,6 @@ providers = ["python"]
 
 [phases.setup]
 nixPkgs = [
-  "python312",
-  "python312Packages.pip",
-  "pkg-config",
   "xorg.libxcb",
   "libxkbcommon",
   "xorg.xcbutilwm",
@@ -21,15 +18,5 @@ nixPkgs = [
   "glib",
   "mesa",
   "fontconfig",
-  "freetype",
-  "zlib"
+  "freetype"
 ]
-
-[phases.install]
-cmds = [
-  "python -m pip install --upgrade pip",
-  "python -m pip install -r requirements.txt"
-]
-
-[start]
-cmd = "uvicorn app.main:app --host 0.0.0.0 --port $PORT"
