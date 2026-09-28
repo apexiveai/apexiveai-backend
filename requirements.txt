@@ -48,7 +48,7 @@ Mako==1.4.1
 markdown-it-py==4.2.0
 MarkupSafe==3.0.3
 mdurl==0.1.2
-numpy==2.5.3
+numpy==1.26.4
 openai==2.54.0
 
 opencv-python-headless==4.10.0.82
