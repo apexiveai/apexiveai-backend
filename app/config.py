@@ -5,6 +5,7 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 
 class Settings(BaseSettings):
     app_name: str = "Apexive Community API"
+
     database_url: str
 
     frontend_url: str = "http://localhost:3000"
@@ -26,7 +27,9 @@ class Settings(BaseSettings):
     didit_api_key: str = ""
     didit_workflow_id: str = ""
     didit_api_url: str = "https://verification.didit.me/v3/session/"
-    didit_status_url: str = "https://verification.didit.me/v3/session/{session_id}/"
+    didit_status_url: str = (
+        "https://verification.didit.me/v3/session/{session_id}/"
+    )
     didit_callback_url: str = ""
 
     embedding_api_key: str = ""
@@ -35,6 +38,8 @@ class Settings(BaseSettings):
 
     model_config = SettingsConfigDict(
         env_file=Path(__file__).resolve().parent.parent / ".env",
+        extra="ignore",
     )
-        
+
+
 settings = Settings()
