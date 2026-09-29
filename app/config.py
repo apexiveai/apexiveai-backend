@@ -8,7 +8,7 @@ class Settings(BaseSettings):
 
     database_url: str
 
-    frontend_url: str = "http://localhost:3000"
+    frontend_url: str = "https://www.apexiveai.com"
 
     smtp_host: str = ""
     smtp_port: int = 587

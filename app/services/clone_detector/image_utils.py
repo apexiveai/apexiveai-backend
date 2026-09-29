@@ -4,7 +4,7 @@ import io
 
 from typing import List, Tuple
 
-import fitz
+import pymupdf
 
 import numpy as np
 
@@ -96,7 +96,7 @@ def pdf_to_images(
 
     """
 
-    document = fitz.open(
+    document = pymupdf.open(
 
         stream=file_bytes,
 
@@ -116,7 +116,7 @@ def pdf_to_images(
 
     scale = dpi / 72.0
 
-    matrix = fitz.Matrix(
+    matrix = pymupdf.Matrix(
 
         scale,
 
