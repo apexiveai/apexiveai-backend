@@ -60,8 +60,7 @@ passlib==1.7.4
 pgvector==0.5.0
 pillow==12.3.0
 prometheus_client==0.26.0
-psycopg==3.3.5
-psycopg-binary==3.3.5
+psycopg[binary]==3.3.5
 psycopg-pool==3.3.1
 psycopg2-binary==2.9.13
 pyasn1==0.6.4

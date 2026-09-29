@@ -20,7 +20,7 @@ from app.api.search import router as search_router
 from app.api.phase1 import router as phase_one_router
 from app.api.executions import router as executions_router
 from app.api.admin import router as admin_router
-
+from app.api import payments
 
 app = FastAPI(
     title="Apexive Community API",
@@ -62,7 +62,7 @@ app.include_router(tenant_router)
 app.include_router(project_engagement_router)
 app.include_router(search_router)
 app.include_router(subscriptions_router)
-
+app.include_router(payments.router)
 
 @app.get("/health")
 def health():

@@ -23,6 +23,7 @@ from app.models.subscription import (
     Subscription,
     BillingEvent,
 )
+from app.models.payment import Payment
 
 __all__ = [
     "User",
@@ -44,6 +45,8 @@ __all__ = [
     "SubscriptionPlan",
     "Subscription",
     "BillingEvent",
+
+    "Payment",
 
     "ProjectTechnology",
     "ProjectLike",

@@ -1,5 +1,7 @@
+from collections.abc import Generator
+
 from sqlalchemy import create_engine
-from sqlalchemy.orm import DeclarativeBase, sessionmaker
+from sqlalchemy.orm import DeclarativeBase, Session, sessionmaker
 
 from app.config import settings
 
@@ -21,12 +23,17 @@ def normalize_database_url(url: str) -> str:
             1,
         )
 
+    if url.startswith("postgresql+psycopg2://"):
+        return url.replace(
+            "postgresql+psycopg2://",
+            "postgresql+psycopg://",
+            1,
+        )
+
     return url
 
 
-DATABASE_URL = normalize_database_url(
-    settings.database_url
-)
+DATABASE_URL = normalize_database_url(settings.database_url)
 
 
 engine = create_engine(
@@ -47,7 +54,7 @@ class Base(DeclarativeBase):
     pass
 
 
-def get_db():
+def get_db() -> Generator[Session, None, None]:
     db = SessionLocal()
 
     try:
